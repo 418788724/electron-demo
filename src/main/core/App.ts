@@ -1,4 +1,4 @@
-import { BrowserWindow, type BrowserWindowConstructorOptions, app, ipcMain } from 'electron'
+import { BrowserWindow, type BrowserWindowConstructorOptions, app } from 'electron'
 import { EventEmitter } from 'events'
 import { ServiceModule, type TServiceModule } from '../services'
 import { type IServiceStorageVal, ServiceStorage } from './ServiceStorage'
@@ -177,7 +177,7 @@ export class App extends EventEmitter {
 
       setTimeout(() => {
         this.browserManager.browsers.get('index')?.send('initDatabase', '?????')
-      }, 3000);
+      }, 3000)
     })
 
     // F12 调试

@@ -6,15 +6,15 @@ function App(): JSX.Element {
   // const ipcHandle = (): void => window.electron.ipcRenderer.send('ping')
   const ipcHandle = async () => {
     try {
-      let res = await IpcInvoke('/system/check-accessibility');
+      const res = await IpcInvoke('/system/check-accessibility')
       console.log('res', res)
     } catch (error) {
+      /* empty */
     }
   }
   useIpc('initDatabase', (_e, value) => {
     console.log('app.ipc initDatabase:', _e, value)
   })
-
 
   return (
     <>
