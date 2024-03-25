@@ -23,7 +23,7 @@ interface LogParams {
  */
 export const logBefore =
   (params: string | LogParams) =>
-  (target: object, propertyName: string, descriptor: PropertyDescriptor): any => {
+  (_target: object, _propertyName: string, descriptor: PropertyDescriptor): any => {
     const method = descriptor.value
 
     descriptor.value = function (...args: any[]): any {
@@ -37,7 +37,7 @@ export const logBefore =
  */
 export const logAfter =
   (params: string | LogParams) =>
-  (target: object, propertyName: string, descriptor: PropertyDescriptor): any => {
+  (_target: object, _propertyName: string, descriptor: PropertyDescriptor): any => {
     const method = descriptor.value
 
     descriptor.value = function (...args: any[]): any {

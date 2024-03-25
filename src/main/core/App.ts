@@ -145,7 +145,7 @@ export class App extends EventEmitter {
     //
     this.logger.info(`离开应用前`)
 
-    ipcHelper.removeAllListeners()
+    ipcHelper.removeAllHandlers()
   }
 
   /**
