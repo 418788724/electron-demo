@@ -1,3 +1,4 @@
+import { common } from '@common/index'
 import { BrowserWindow, type BrowserWindowConstructorOptions, app } from 'electron'
 import { EventEmitter } from 'events'
 import { ServiceModule, type TServiceModule } from '../services'
@@ -66,7 +67,7 @@ export class App extends EventEmitter {
    * @description 初始化导入service
    */
   initServices(): void {
-    this.logger.info(`开始注册服务-----`)
+    this.logger.info(`开始注册服务-----${common}`)
     const servicesPkg: TServiceModule[] = importAll(
       import.meta.glob('../services/*Service.ts', { eager: true })
     )

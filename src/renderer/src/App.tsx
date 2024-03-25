@@ -1,6 +1,7 @@
 import Versions from './components/Versions'
 import electronLogo from './assets/electron.svg'
 import { IpcInvoke, useIpc } from './hooks'
+import { common } from '@common/index'
 
 function App(): JSX.Element {
   // const ipcHandle = (): void => window.electron.ipcRenderer.send('ping')
@@ -13,7 +14,7 @@ function App(): JSX.Element {
     }
   }
   useIpc('initDatabase', (_e, value) => {
-    console.log('app.ipc initDatabase:', _e, value)
+    console.log('app.ipc initDatabase:', _e, value, common)
   })
 
   return (
